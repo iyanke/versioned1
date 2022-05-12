@@ -1,6 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.script
-import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -28,8 +27,6 @@ version = "2022.04"
 
 project {
 
-    vcsRoot(HttpsGithubComInnayanVersioned1)
-
     buildType(Tool)
     buildType(VersionedSettingsConfig)
 }
@@ -51,11 +48,4 @@ object Tool : BuildType({
 
 object VersionedSettingsConfig : BuildType({
     name = "Versioned Settings config1"
-})
-
-object HttpsGithubComInnayanVersioned1 : GitVcsRoot({
-    name = "https://github.com/innayan/versioned1/"
-    url = "https://github.com/innayan/versioned1/"
-    branch = "refs/heads/master"
-    param("useAlternates", "true")
 })
