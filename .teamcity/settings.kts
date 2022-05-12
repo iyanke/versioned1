@@ -48,4 +48,8 @@ object Tool : BuildType({
 
 object VersionedSettingsConfig : BuildType({
     name = "Versioned Settings config1"
+
+    vcs {
+        root(AbsoluteId("BuildReportTab_HttpsGithubComIyankeBigdataRefsHeadsMaster"))
+    }
 })
